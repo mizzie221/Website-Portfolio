@@ -16,7 +16,7 @@
     .dvd-logo {
       position: absolute;
       width: 150px;
-      animation: dvd-bounce 10s infinite linear;
+      animation: dvd-move 10s infinite linear;
     }
   }
 
@@ -48,10 +48,30 @@
   }
 }
 
-@keyframes dvd-bounce {
-  0% { top: 0; left: 0; }
-  25% { top: 0; left: calc(100% - 150px); }
-  50% { top: calc(100% - 150px); left: calc(100% - 150px); }
-  75% { top: calc(100% - 150px); left: 0; }
-  100% { top: 0; left: 0; }
+@keyframes dvd-move {
+  0% {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
+  25% {
+    top: 0;
+    left: calc(100% - 150px);
+    transform: translate(0, 0);
+  }
+  50% {
+    top: calc(100% - 150px);
+    left: calc(100% - 150px);
+    transform: translate(0, 0);
+  }
+  75% {
+    top: calc(100% - 150px);
+    left: 0;
+    transform: translate(0, 0);
+  }
+  100% {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
 }

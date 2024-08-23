@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.scss';
-import dvdLogo from './images/dvd-logo.png'; // Corrected path to the image
+import dvdLogo from './images/dvd-logo.png';
 
 const Header = () => {
   return (
