@@ -4,6 +4,7 @@ import './Header.scss';
 import pythonLogo from './images/python-logo.png';
 import javaLogo from './images/Java.png';
 import cLogo from './images/c++.png';
+import galaxyImage from './images/WUWA.png';
 
 const logos = [pythonLogo, javaLogo, cLogo];
 
@@ -53,7 +54,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="header">
+    <header className="header"> 
       <nav className="top-nav">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>

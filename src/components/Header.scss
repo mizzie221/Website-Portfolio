@@ -6,18 +6,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fff; /* Change background to white */
+  background-color: #fff;
   overflow: hidden;
 
   .top-nav {
     position: absolute;
     top: 20px;
-    right: 20px; /* Aligns to the top-right similar to your example */
+    right: 20px;
     display: flex;
     gap: 20px;
 
     a {
-      color: #1E90FF; /* Update with your preferred color */
+      color: #1E90FF;
       text-decoration: none;
       font-weight: bold;
       font-size: 1rem;
@@ -33,7 +33,7 @@
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 2;
+    z-index: 3; /* Bring the logo in front of the box */
 
     .dvd-logo {
       position: absolute;
@@ -43,44 +43,38 @@
       animation: dvd-move 10s infinite linear;
     }
   }
-}
 
   .centered-content {
     position: relative;
     z-index: 2;
-    color: #4B8BBE; // Same color as the Python logo
+    background-color: rgba(173, 216, 230, 0.1);
+    width: 94%; /* Make the box cover 80% of the page width */
+    height: 85%; /* Make the box cover 80% of the page height */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    font-family: 'Poppins', sans-serif; // Example of a modern font
-    transform: translate(-150%, -50%); // Move slightly left and up
-    padding: 30px; // Add some padding inside the box
-  
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      font-weight: 700; // Bold font-weight for the h1
-      color: #4B8BBE; // Apply the same color here
-    }
-
-    h2 {
-      font-size: 2rem;
-      font-weight: 500; // Slightly less bold than h1
-      color: #4B8BBE; // Apply the same color here
-      margin-top: 0;
-    }
-  
-    .btn {
-      display: inline-block;
-      padding: 10px 30px;
-      background-color: #4B8BBE; // Same color as the Python logo
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 1.5rem;
-      font-weight: 400; // Regular font-weight for the button
-      transition: background-color 0.3s ease;
-  
-      &:hover {
-        background-color: #3A7BA7; // A slightly darker shade for hover effect
-      }
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #4B8BBE;
+    position: relative;
+    left: 200px; 
+    top: 230px; 
+  }
+
+  .typing-container {
+    font-size: 1.5rem;
+    color: #4B8BBE;
+    position: relative;
+    left: 200px; /* Align the typing container with the H1 */
+    top: 230px; /* Align the typing container with the H1 */
+  }
+}
