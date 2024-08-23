@@ -1,10 +1,18 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import './Header.scss';
 import dvdLogo from './images/python-logo.png';
+
+const phrases = [
+  "a Developer",
+  "a Problem Solver",
+  "a Creative Thinker",
+  "an Innovator"
+];
 
 const Header = () => {
   const logoRef = useRef(null);
   const direction = useRef({ x: 1, y: 1 });
+  const [currentPhrase, setCurrentPhrase] = useState(0);
 
   useEffect(() => {
     const moveLogo = () => {
@@ -33,6 +41,14 @@ const Header = () => {
     requestAnimationFrame(moveLogo);
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPhrase(prev => (prev + 1) % phrases.length);
+    }, 2000); // Change phrase every 2 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <header className="header">
       <div className="dvd-logo-container">
@@ -40,7 +56,7 @@ const Header = () => {
       </div>
       <div className="centered-content">
         <h1>Hi, I'm Minh</h1>
-        <a href="#start" className="btn">Get Started</a>
+        <h2>{phrases[currentPhrase]}</h2>
       </div>
     </header>
   );
