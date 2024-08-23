@@ -1,18 +1,16 @@
 import React, { useRef, useEffect, useState } from 'react';
+import {ReactTyped as Typed} from "react-typed";
 import './Header.scss';
-import dvdLogo from './images/python-logo.png';
+import pythonLogo from './images/python-logo.png';
+import javaLogo from './images/Java.png';
+import cLogo from './images/c++.png';
 
-const phrases = [
-  "a Developer",
-  "a Problem Solver",
-  "a Creative Thinker",
-  "an Innovator"
-];
+const logos = [pythonLogo, javaLogo, cLogo];
 
 const Header = () => {
   const logoRef = useRef(null);
   const direction = useRef({ x: 1, y: 1 });
-  const [currentPhrase, setCurrentPhrase] = useState(0);
+  const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
 
   useEffect(() => {
     const moveLogo = () => {
@@ -42,21 +40,36 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentPhrase(prev => (prev + 1) % phrases.length);
-    }, 2000); // Change phrase every 2 seconds
+    const changeLogo = () => {
+      setCurrentLogoIndex((prevIndex) => (prevIndex + 1) % logos.length);
+    };
 
-    return () => clearInterval(interval);
+    const logoChangeInterval = setInterval(changeLogo, 5000);
+
+    return () => clearInterval(logoChangeInterval);
   }, []);
 
   return (
     <header className="header">
       <div className="dvd-logo-container">
-        <img ref={logoRef} src={dvdLogo} alt="DVD Logo" className="dvd-logo" />
+        <img ref={logoRef} src={logos[currentLogoIndex]} alt="DVD Logo" className="dvd-logo" />
       </div>
       <div className="centered-content">
-        <h1>Hi, I'm Minh</h1>
-        <h2>{phrases[currentPhrase]}</h2>
+        <h1>Hi, I'm Minh,</h1>
+        <div className="typing-container">
+          <span>a&nbsp;</span>
+          <Typed
+            strings={[
+              "Creative Thinker",
+              "Problem Solver",
+              "Software Developer",
+              "Lifelong Learner"
+            ]}
+            typeSpeed={40}
+            backSpeed={50}
+            loop
+          />
+        </div>
       </div>
     </header>
   );

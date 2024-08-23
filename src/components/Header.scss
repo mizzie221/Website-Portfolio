@@ -63,26 +63,5 @@
         background-color: #3A7BA7; // A slightly darker shade for hover effect
       }
     }
-
-    .typing-effect {
-      font-size: 2rem;
-      font-weight: 500;
-      color: #4B8BBE;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid #4B8BBE;
-      animation: typing 3s steps(30, end) infinite, blink-caret 0.75s step-end infinite;
-    }
-  }  
-
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
   }
-  
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #4B8BBE }
-  }
-
 }
