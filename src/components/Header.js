@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import './Header.scss';
-import dvdLogo from './images/dvd-logo.png';
+import dvdLogo from './images/python-logo.png';
 
 const Header = () => {
   const logoRef = useRef(null);
@@ -39,7 +39,7 @@ const Header = () => {
         <img ref={logoRef} src={dvdLogo} alt="DVD Logo" className="dvd-logo" />
       </div>
       <div className="centered-content">
-        <h1>Minh Pham</h1>
+        <h1>Hi, I'm Minh</h1>
         <a href="#start" className="btn">Get Started</a>
       </div>
     </header>
