@@ -4,7 +4,6 @@ import './Header.scss';
 import pythonLogo from './images/python-logo.png';
 import javaLogo from './images/Java.png';
 import cLogo from './images/c++.png';
-import galaxyImage from './images/WUWA.png';
 
 const logos = [pythonLogo, javaLogo, cLogo];
 
@@ -68,7 +67,7 @@ const Header = () => {
         <img ref={logoRef} src={logos[currentLogoIndex]} alt="Logo" className="dvd-logo" />
       </div>
       <div className="centered-content">
-        <h1>Hi, I'm Minh,</h1>
+        <h1>Hi, I'm Minh</h1>
         <div className="typing-container">
           <span>a&nbsp;</span>
           <Typed
@@ -76,7 +75,8 @@ const Header = () => {
               "Creative Thinker",
               "Problem Solver",
               "Software Developer",
-              "Lifelong Learner"
+              "Lifelong Learner",
+              "Full-Time Student"
             ]}
             typeSpeed={40}
             backSpeed={50}

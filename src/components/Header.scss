@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
 
 .header {
   position: relative;
@@ -7,9 +10,12 @@
   align-items: center;
   justify-content: center;
   background-color: #fff;
+  //background: linear-gradient(135deg, #e0f7fa, #ffffff);
   overflow: hidden;
 
+
   .top-nav {
+    font-family: 'Montserrat', sans-serif;
     position: absolute;
     top: 20px;
     right: 20px;
@@ -45,6 +51,7 @@
   }
 
   .centered-content {
+    font-family: 'Montserrat', sans-serif;
     position: relative;
     z-index: 2;
     background-color: rgba(173, 216, 230, 0.1);
@@ -61,7 +68,7 @@
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 5rem;
     margin-bottom: 20px;
     font-weight: 700;
     color: #4B8BBE;
@@ -74,7 +81,7 @@
     font-size: 1.5rem;
     color: #4B8BBE;
     position: relative;
-    left: 200px; /* Align the typing container with the H1 */
+    left: 330px; /* Align the typing container with the H1 */
     top: 230px; /* Align the typing container with the H1 */
   }
 }
