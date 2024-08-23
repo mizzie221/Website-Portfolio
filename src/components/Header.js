@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import {ReactTyped as Typed} from "react-typed";
+import { ReactTyped as Typed } from "react-typed";
 import './Header.scss';
 import pythonLogo from './images/python-logo.png';
 import javaLogo from './images/Java.png';
@@ -9,50 +9,62 @@ const logos = [pythonLogo, javaLogo, cLogo];
 
 const Header = () => {
   const logoRef = useRef(null);
-  const direction = useRef({ x: 1, y: 1 });
+  const textRef = useRef(null); 
+  const directionLogo = useRef({ x: 1, y: 1 });
+  const directionText = useRef({ x: -1, y: 1 }); 
   const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
 
   useEffect(() => {
-    const moveLogo = () => {
-      const logo = logoRef.current;
-      const container = logo.parentElement;
-      const logoRect = logo.getBoundingClientRect();
+    const moveElement = (elementRef, direction) => {
+      const element = elementRef.current;
+      const container = element.parentElement;
+      const elementRect = element.getBoundingClientRect();
       const containerRect = container.getBoundingClientRect();
 
-      let newX = logo.offsetLeft + direction.current.x;
-      let newY = logo.offsetTop + direction.current.y;
+      let newX = element.offsetLeft + direction.current.x;
+      let newY = element.offsetTop + direction.current.y;
 
-      if (newX <= 0 || newX + logoRect.width >= containerRect.width) {
+      if (newX <= 0 || newX + elementRect.width >= containerRect.width) {
         direction.current.x *= -1;
       }
 
-      if (newY <= 0 || newY + logoRect.height >= containerRect.height) {
+      if (newY <= 0 || newY + elementRect.height >= containerRect.height) {
         direction.current.y *= -1;
       }
 
-      logo.style.left = `${newX}px`;
-      logo.style.top = `${newY}px`;
+      element.style.left = `${newX}px`;
+      element.style.top = `${newY}px`;
 
-      requestAnimationFrame(moveLogo);
+      requestAnimationFrame(() => moveElement(elementRef, direction));
     };
 
-    requestAnimationFrame(moveLogo);
-  }, []);
-
-  useEffect(() => {
     const changeLogo = () => {
       setCurrentLogoIndex((prevIndex) => (prevIndex + 1) % logos.length);
     };
 
+    requestAnimationFrame(() => moveElement(logoRef, directionLogo));
+    requestAnimationFrame(() => moveElement(textRef, directionText));
+
     const logoChangeInterval = setInterval(changeLogo, 5000);
 
-    return () => clearInterval(logoChangeInterval);
+    return () => {
+      clearInterval(logoChangeInterval);
+    };
   }, []);
 
   return (
     <header className="header">
+      <nav className="top-nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="#resume">Resume</a>
+      </nav>
+      <div className="floating-text" ref={textRef}>
+      </div>
       <div className="dvd-logo-container">
-        <img ref={logoRef} src={logos[currentLogoIndex]} alt="DVD Logo" className="dvd-logo" />
+        <img ref={logoRef} src={logos[currentLogoIndex]} alt="Logo" className="dvd-logo" />
       </div>
       <div className="centered-content">
         <h1>Hi, I'm Minh,</h1>
