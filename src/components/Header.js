@@ -1,16 +1,16 @@
 import React from 'react';
-// import './Header.scss';
+import './Header.scss';
+import dvdLogo from './images/dvd-logo.png'; // Corrected path to the image
 
 const Header = () => {
   return (
     <header className="header">
-      <div className="container">
-        <h1>Hello, I'm <span className="name">Minh Pham</span></h1>
-        <p className="tagline">I love Coding!<span id="dynamic-text"></span></p>
-        <div className="buttons">
-          <a href="#work" className="btn">View my work</a>
-          <a href="#resume" className="btn">View Resume</a>
-        </div>
+      <div className="dvd-logo-container">
+        <img src={dvdLogo} alt="DVD Logo" className="dvd-logo" />
+      </div>
+      <div className="centered-content">
+        <h1>Minh Pham</h1>
+        <a href="#start" className="btn">Get Started</a>
       </div>
     </header>
   );
