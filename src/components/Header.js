@@ -4,6 +4,7 @@ import './Header.scss';
 import pythonLogo from './images/python-logo.png';
 import javaLogo from './images/Java.png';
 import cLogo from './images/c++.png';
+//import profilePic from './images/Profile.jpg';
 
 const logos = [pythonLogo, javaLogo, cLogo];
 
@@ -45,7 +46,7 @@ const Header = () => {
     requestAnimationFrame(() => moveElement(logoRef, directionLogo));
     requestAnimationFrame(() => moveElement(textRef, directionText));
 
-    const logoChangeInterval = setInterval(changeLogo, 5000);
+    const logoChangeInterval = setInterval(changeLogo, 7000);
 
     return () => {
       clearInterval(logoChangeInterval);
@@ -75,14 +76,14 @@ const Header = () => {
               "Creative Thinker",
               "Problem Solver",
               "Software Developer",
-              "Lifelong Learner",
-              "Full-Time Student"
+              "Lifelong Learner"
             ]}
             typeSpeed={40}
             backSpeed={50}
             loop
           />
         </div>
+        <p>from Orlando, Florida</p>
       </div>
     </header>
   );

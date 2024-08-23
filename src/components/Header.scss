@@ -67,6 +67,21 @@
     align-items: flex-start;
   }
 
+  .profile-pic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+
+    img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+  }
+
   h1 {
     font-size: 5rem;
     margin-bottom: 20px;
@@ -75,6 +90,15 @@
     position: relative;
     left: 200px; 
     top: 230px; 
+  }
+
+  p {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #4B8BBE;
+    position: relative;
+    left: 200px; /* Align the typing container with the H1 */
+    top: 210px; /* Align the typing container with the H1 */
   }
 
   .typing-container {
