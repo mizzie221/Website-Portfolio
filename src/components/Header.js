@@ -83,7 +83,6 @@ const Header = () => {
             loop
           />
         </div>
-        <p>from Orlando, Florida</p>
       </div>
     </header>
   );
