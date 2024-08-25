@@ -1,23 +1,12 @@
-import React, { useState } from 'react';
-import Loading from './components/Loading';
-import Header from './components/Header';  // Assuming your main content component is named Header
+import React from 'react';
+import Header from './components/Header';
 
-const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  const handleStart = () => {
-    setIsLoading(false);  // Switch to the main content after loading is done
-  };
-
+function App() {
   return (
     <div className="App">
-      {isLoading ? (
-        <Loading onStart={handleStart} />
-      ) : (
-        <Header />  // This is your main content component
-      )}
+      <Header />
     </div>
   );
-};
+}
 
 export default App;
