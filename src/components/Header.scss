@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-
-
 .header {
   position: relative;
   height: 100vh;
@@ -107,5 +105,60 @@
     position: relative;
     left: 330px; /* Align the typing container with the H1 */
     top: 230px; /* Align the typing container with the H1 */
+    z-index: 4;
   }
+
+  .keyboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    left: 75%;
+    top: 75%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+  }
+  
+  .key {
+    width: 40px;
+    height: 40px;
+    margin: 3px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: background-color 0.1s ease;
+    border-radius: 5px;
+  }
+  
+  .key.backspace {
+    width: 80px;
+  }
+  
+  .key.tab, .key.capslock, .key.shift, .key.ctrl, .key.alt, .key.win, .key.menu {
+    width: 60px;
+  }
+  
+  .key.enter {
+    width: 80px;
+  }
+  
+  .key.space {
+    width: 300px;
+  }
+  
+  .key.pressed {
+    background-color: #4B8BBE;
+    color: white;
+  }
+  
 }

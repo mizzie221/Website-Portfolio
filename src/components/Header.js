@@ -10,10 +10,11 @@ const logos = [pythonLogo, javaLogo, cLogo];
 
 const Header = () => {
   const logoRef = useRef(null);
-  const textRef = useRef(null); 
+  const textRef = useRef(null);
   const directionLogo = useRef({ x: 1, y: 1 });
-  const directionText = useRef({ x: -1, y: 1 }); 
+  const directionText = useRef({ x: -1, y: 1 });
   const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
+  const [pressedKey, setPressedKey] = useState(null);
 
   useEffect(() => {
     const moveElement = (elementRef, direction) => {
@@ -53,8 +54,15 @@ const Header = () => {
     };
   }, []);
 
+  const handleTyping = (typedText) => {
+    const lastChar = typedText.slice(-1).toUpperCase();
+    setPressedKey(lastChar);
+
+    setTimeout(() => setPressedKey(null), 100); // Release key after 100ms
+  };
+
   return (
-    <header className="header"> 
+    <header className="header">
       <nav className="top-nav">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -81,7 +89,81 @@ const Header = () => {
             typeSpeed={40}
             backSpeed={50}
             loop
+            onStringTyped={(index, self) => handleTyping(self.strings[index])}
           />
+        </div>
+        <div className="keyboard-container">
+          <div className="row">
+            <div className={`key ${pressedKey === '\'' ? 'pressed' : ''}`}>ESC</div>
+            <div className={`key ${pressedKey === '1' ? 'pressed' : ''}`}>1</div>
+            <div className={`key ${pressedKey === '2' ? 'pressed' : ''}`}>2</div>
+            <div className={`key ${pressedKey === '3' ? 'pressed' : ''}`}>3</div>
+            <div className={`key ${pressedKey === '4' ? 'pressed' : ''}`}>4</div>
+            <div className={`key ${pressedKey === '5' ? 'pressed' : ''}`}>5</div>
+            <div className={`key ${pressedKey === '6' ? 'pressed' : ''}`}>6</div>
+            <div className={`key ${pressedKey === '7' ? 'pressed' : ''}`}>7</div>
+            <div className={`key ${pressedKey === '8' ? 'pressed' : ''}`}>8</div>
+            <div className={`key ${pressedKey === '9' ? 'pressed' : ''}`}>9</div>
+            <div className={`key ${pressedKey === '0' ? 'pressed' : ''}`}>0</div>
+            <div className={`key ${pressedKey === '-' ? 'pressed' : ''}`}>-</div>
+            <div className={`key ${pressedKey === '=' ? 'pressed' : ''}`}>=</div>
+            <div className="key backspace">Backspace</div>
+          </div>
+          <div className="row">
+            <div className="key tab">Tab</div>
+            <div className={`key ${pressedKey === 'Q' ? 'pressed' : ''}`}>Q</div>
+            <div className={`key ${pressedKey === 'W' ? 'pressed' : ''}`}>W</div>
+            <div className={`key ${pressedKey === 'E' ? 'pressed' : ''}`}>E</div>
+            <div className={`key ${pressedKey === 'R' ? 'pressed' : ''}`}>R</div>
+            <div className={`key ${pressedKey === 'T' ? 'pressed' : ''}`}>T</div>
+            <div className={`key ${pressedKey === 'Y' ? 'pressed' : ''}`}>Y</div>
+            <div className={`key ${pressedKey === 'U' ? 'pressed' : ''}`}>U</div>
+            <div className={`key ${pressedKey === 'I' ? 'pressed' : ''}`}>I</div>
+            <div className={`key ${pressedKey === 'O' ? 'pressed' : ''}`}>O</div>
+            <div className={`key ${pressedKey === 'P' ? 'pressed' : ''}`}>P</div>
+            <div className={`key ${pressedKey === '[' ? 'pressed' : ''}`}>[</div>
+            <div className={`key ${pressedKey === ']' ? 'pressed' : ''}`}>]</div>
+            <div className={`key ${pressedKey === '\\' ? 'pressed' : ''}`}>\\</div>
+          </div>
+          <div className="row">
+            <div className="key capslock">Caps</div>
+            <div className={`key ${pressedKey === 'A' ? 'pressed' : ''}`}>A</div>
+            <div className={`key ${pressedKey === 'S' ? 'pressed' : ''}`}>S</div>
+            <div className={`key ${pressedKey === 'D' ? 'pressed' : ''}`}>D</div>
+            <div className={`key ${pressedKey === 'F' ? 'pressed' : ''}`}>F</div>
+            <div className={`key ${pressedKey === 'G' ? 'pressed' : ''}`}>G</div>
+            <div className={`key ${pressedKey === 'H' ? 'pressed' : ''}`}>H</div>
+            <div className={`key ${pressedKey === 'J' ? 'pressed' : ''}`}>J</div>
+            <div className={`key ${pressedKey === 'K' ? 'pressed' : ''}`}>K</div>
+            <div className={`key ${pressedKey === 'L' ? 'pressed' : ''}`}>L</div>
+            <div className={`key ${pressedKey === ';' ? 'pressed' : ''}`}>;</div>
+            <div className={`key ${pressedKey === '\'' ? 'pressed' : ''}`}>'</div>
+            <div className="key enter">Enter</div>
+          </div>
+          <div className="row">
+            <div className="key shift">Shift</div>
+            <div className={`key ${pressedKey === 'Z' ? 'pressed' : ''}`}>Z</div>
+            <div className={`key ${pressedKey === 'X' ? 'pressed' : ''}`}>X</div>
+            <div className={`key ${pressedKey === 'C' ? 'pressed' : ''}`}>C</div>
+            <div className={`key ${pressedKey === 'V' ? 'pressed' : ''}`}>V</div>
+            <div className={`key ${pressedKey === 'B' ? 'pressed' : ''}`}>B</div>
+            <div className={`key ${pressedKey === 'N' ? 'pressed' : ''}`}>N</div>
+            <div className={`key ${pressedKey === 'M' ? 'pressed' : ''}`}>M</div>
+            <div className={`key ${pressedKey === 'L' ? 'pressed' : ''}`}>,</div>
+            <div className={`key ${pressedKey === 'L' ? 'pressed' : ''}`}>.</div>
+            <div className={`key ${pressedKey === 'L' ? 'pressed' : ''}`}>/</div>
+            <div className="key shift">Shift</div>
+          </div>
+          <div className="row">
+            <div className="key ctrl">Ctrl</div>
+            <div className="key win">Win</div>
+            <div className="key alt">Alt</div>
+            <div className={`key space ${pressedKey === ' ' ? 'pressed' : ''}`}></div>
+            <div className="key alt">Alt</div>
+            <div className="key win">Win</div>
+            <div className="key menu">Menu</div>
+            <div className="key ctrl">Ctrl</div>
+          </div>
         </div>
       </div>
     </header>
