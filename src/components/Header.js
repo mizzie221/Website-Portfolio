@@ -94,7 +94,7 @@ const Header = () => {
         </div>
         <div className="keyboard-container">
           <div className="row">
-            <div className={`key ${pressedKey === '\'' ? 'pressed' : ''}`}>ESC</div>
+            <div className="key esc">ESC</div>
             <div className={`key ${pressedKey === '1' ? 'pressed' : ''}`}>1</div>
             <div className={`key ${pressedKey === '2' ? 'pressed' : ''}`}>2</div>
             <div className={`key ${pressedKey === '3' ? 'pressed' : ''}`}>3</div>
@@ -149,22 +149,23 @@ const Header = () => {
             <div className={`key ${pressedKey === 'B' ? 'pressed' : ''}`}>B</div>
             <div className={`key ${pressedKey === 'N' ? 'pressed' : ''}`}>N</div>
             <div className={`key ${pressedKey === 'M' ? 'pressed' : ''}`}>M</div>
-            <div className={`key ${pressedKey === 'L' ? 'pressed' : ''}`}>,</div>
-            <div className={`key ${pressedKey === 'L' ? 'pressed' : ''}`}>.</div>
-            <div className={`key ${pressedKey === 'L' ? 'pressed' : ''}`}>/</div>
+            <div className={`key ${pressedKey === ',' ? 'pressed' : ''}`}>,</div>
+            <div className={`key ${pressedKey === '.' ? 'pressed' : ''}`}>.</div>
+            <div className={`key ${pressedKey === '/' ? 'pressed' : ''}`}>/</div>
             <div className="key shift">Shift</div>
           </div>
           <div className="row">
             <div className="key ctrl">Ctrl</div>
             <div className="key win">Win</div>
             <div className="key alt">Alt</div>
-            <div className={`key space ${pressedKey === ' ' ? 'pressed' : ''}`}></div>
+            <div className="key space ${pressedKey === ' ' ? 'pressed' : ''}"></div>
             <div className="key alt">Alt</div>
             <div className="key win">Win</div>
             <div className="key menu">Menu</div>
             <div className="key ctrl">Ctrl</div>
           </div>
         </div>
+
       </div>
     </header>
   );
