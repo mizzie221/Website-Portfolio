@@ -11,48 +11,8 @@ const logos = [pythonLogo, javaLogo, cLogo];
 const Header = () => {
   const logoRef = useRef(null);
   const textRef = useRef(null);
-  const directionLogo = useRef({ x: 1, y: 1 });
-  const directionText = useRef({ x: -1, y: 1 });
   const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
   const [pressedKey, setPressedKey] = useState(null);
-
-  useEffect(() => {
-    const moveElement = (elementRef, direction) => {
-      const element = elementRef.current;
-      const container = element.parentElement;
-      const elementRect = element.getBoundingClientRect();
-      const containerRect = container.getBoundingClientRect();
-
-      let newX = element.offsetLeft + direction.current.x;
-      let newY = element.offsetTop + direction.current.y;
-
-      if (newX <= 0 || newX + elementRect.width >= containerRect.width) {
-        direction.current.x *= -1;
-      }
-
-      if (newY <= 0 || newY + elementRect.height >= containerRect.height) {
-        direction.current.y *= -1;
-      }
-
-      element.style.left = `${newX}px`;
-      element.style.top = `${newY}px`;
-
-      requestAnimationFrame(() => moveElement(elementRef, direction));
-    };
-
-    const changeLogo = () => {
-      setCurrentLogoIndex((prevIndex) => (prevIndex + 1) % logos.length);
-    };
-
-    requestAnimationFrame(() => moveElement(logoRef, directionLogo));
-    requestAnimationFrame(() => moveElement(textRef, directionText));
-
-    const logoChangeInterval = setInterval(changeLogo, 7000);
-
-    return () => {
-      clearInterval(logoChangeInterval);
-    };
-  }, []);
 
   const handleTyping = (typedText) => {
     const lastChar = typedText.slice(-1).toUpperCase();
@@ -71,9 +31,6 @@ const Header = () => {
         <a href="#resume">Resume</a>
       </nav>
       <div className="floating-text" ref={textRef}>
-      </div>
-      <div className="dvd-logo-container">
-        <img ref={logoRef} src={logos[currentLogoIndex]} alt="Logo" className="dvd-logo" />
       </div>
 
       <div className="centered-content">
@@ -96,7 +53,7 @@ const Header = () => {
 
         <div className="tv-screen">
           <div className="screen-content">
-            
+
           </div>
         </div>
 
