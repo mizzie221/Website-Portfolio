@@ -32,8 +32,8 @@
     position: relative;
     z-index: 2;
     background-color: rgba(173, 216, 230, 0.1);
-    width: 100%; /* Make the box cover 80% of the page width */
-    height: 100%; /* Make the box cover 80% of the page height */
+    width: 94%; /* Make the box cover 80% of the page width */
+    height: 87%; /* Make the box cover 80% of the page height */
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -125,11 +125,11 @@
     background-size: 200% 200%;
     animation: rgbShift 2s infinite;
     font-size: 0.65rem; /* Reduced font size to fit perfectly */
-    font-weight: bold; /* Make the text thicker */
+    font-weight: bold; 
     display: block;
-    text-align: left; /* Center text within the key */
-    line-height: 25px; /* Ensure the text is vertically centered */
-    padding-right: 9px; /* Slightly move the text to the left */
+    text-align: left; 
+    line-height: 25px; 
+    padding-right: 9px; 
   }
 
   .key.ctrl, .key.win, .key.alt {
