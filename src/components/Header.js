@@ -1,18 +1,25 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { ReactTyped as Typed } from "react-typed";
 import './Header.scss';
-import pythonLogo from './images/python-logo.png';
-import javaLogo from './images/Java.png';
-import cLogo from './images/c++.png';
-//import profilePic from './images/Profile.jpg';
 
-const logos = [pythonLogo, javaLogo, cLogo];
 
 const Header = () => {
-  const logoRef = useRef(null);
   const textRef = useRef(null);
-  const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
   const [pressedKey, setPressedKey] = useState(null);
+  const [screenText, setScreenText] = useState(['Welcome to my Portfolio...', 'Press "Enter" to continue...']);
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key === 'Enter') {
+        setShowContent(true);
+        setScreenText(['Please select any of the links below to navigate', 'Enjoy your journey!']); // Change the text on the TV screen
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, []);
 
   const handleTyping = (typedText) => {
     const lastChar = typedText.slice(-1).toUpperCase();
@@ -23,16 +30,6 @@ const Header = () => {
 
   return (
     <header className="header">
-      <nav className="top-nav">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <a href="#resume">Resume</a>
-      </nav>
-      <div className="floating-text" ref={textRef}>
-      </div>
-
       <div className="centered-content">
         <h1>Hi, I'm Minh</h1>
         <div className="typing-container">
@@ -53,9 +50,34 @@ const Header = () => {
 
         <div className="tv-screen">
           <div className="screen-content">
-
+            <Typed
+              strings={screenText} 
+              typeSpeed={60}
+              backSpeed={80}
+              showCursor={true}
+              loop
+            />
+            {showContent && (
+              <div className="navigation-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#resume">Resume</a>
+                <a href="#contact">Contact</a>
+              </div>
+            )}
           </div>
         </div>
+
+        <svg className="cable" viewBox="0 0 100 300">
+          <path
+            d="M 50, 0
+              C 20, 100, 80, 200, 50, 300"
+            stroke="#4B8BBE"
+            fill="transparent"
+            strokeWidth="5"
+          />
+        </svg>
 
         <div className="keyboard-wrapper">
           <div className="keyboard-container">

@@ -11,27 +11,6 @@
   //background: linear-gradient(135deg, #e0f7fa, #ffffff);
   overflow: hidden;
 
-
-  .top-nav {
-    font-family: 'Montserrat', sans-serif;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 20px;
-
-    a {
-      color: #1E90FF;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-
   .dvd-logo-container {
     position: absolute;
     width: 100%;
@@ -53,8 +32,8 @@
     position: relative;
     z-index: 2;
     background-color: rgba(173, 216, 230, 0.1);
-    width: 94%; /* Make the box cover 80% of the page width */
-    height: 85%; /* Make the box cover 80% of the page height */
+    width: 100%; /* Make the box cover 80% of the page width */
+    height: 100%; /* Make the box cover 80% of the page height */
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -63,21 +42,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-  }
-
-  .profile-pic {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 40%;
-
-    img {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-    }
   }
 
   h1 {
@@ -119,7 +83,7 @@
     display: inline-block; /* Inline-block to fit the box snugly around the keyboard */
     position: absolute;
     left: 70%;
-    top: 70%;
+    top: 80%;
     transform: translate(-50%, -50%);
     z-index: 4;
   }
@@ -222,26 +186,63 @@
 
   .tv-screen {
     position: absolute;
-    top: 25%; /* Adjust the top position */
-    left: 70%; /* Adjust the left position */
+    top: 30%;
+    left: 70%;
     transform: translate(-50%, -50%);
     width: 800px;
-    height: 400px;
+    height: 500px;
     background-color: #000;
     border: 5px solid #444;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
     display: flex; 
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start; /* Align content to the top */
+    justify-content: flex-start; /* Align content to the left */
     color: #fff;
     font-size: 1.2rem;
+    padding: 20px; /* Add padding for spacing */
     margin-top: 20px;
+
+    .screen-content {
+      text-align: left;
+      color: white;
+      padding: 10px;
+      
+    .screen-text {
+        color: white; /* Set the text color to green */
+    }
+    }
   }
 
-  .screen-content {
-    text-align: center;
-    padding: 20px;
+  .navigation-links{
+    position: absolute; 
+    top: 100px; 
+    left: 9.6%;
+    transform: translateX(-50%); 
+    display: flex;
+    flex-direction: column; 
+    gap: 60px;
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: normal;
+
+    &:hover {
+      font-weight: bold;
+    }
   }
-  
+}
+
+.cable {
+  position: absolute;
+  top: 70%; 
+  left: 69%;
+  width: 400px; 
+  height: 160px; 
+  transform: translate(-50%, -50%);
+  z-index: 1; 
+}
+
 }  
