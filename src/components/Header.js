@@ -53,7 +53,7 @@ const Header = () => {
         </div>
 
         <div className="tv-screen">
-          <div className="screen-content">
+          <div className="screen-content2">
             <Typed
               strings={screenText} 
               typeSpeed={60}
@@ -63,21 +63,18 @@ const Header = () => {
             />
             {showContent && (
               <div className="navigation-links">
+                <div className="vertical-line"></div> {/* Add this line */}
                 <a href="#about">
                   <img src={aboutIcon} alt="About" className="nav-icon" />
-                  <span>About</span>
                 </a>
                 <a href="#projects">
                   <img src={projectsIcon} alt="Projects" className="nav-icon" />
-                  <span>Projects</span>
                 </a>
                 <a href="#resume">
                   <img src={resumeIcon} alt='Resume' className='nav-icon' />
-                  <span>Resume</span>
                 </a>
                 <a href="#contact">
                   <img src={contactIcon} alt="Contact" className="nav-icon" />
-                  <span>Contact</span>
                 </a>
               </div>
             )}
