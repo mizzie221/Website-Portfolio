@@ -6,9 +6,8 @@ const About = () => {
   return (
     <section className="about-section" id="about">
       <div className="about-links">
-        <a href="#skills">Skills</a>
+        <a href="#header">Header</a>
         <a href="#projects">Projects</a>
-        <a href="#Resume">Resume</a>
         <a href="#Contact">Contact</a>
       </div>
 
@@ -23,13 +22,13 @@ const About = () => {
         <div className="skills-container">
           <h3>Skills</h3>
           <div className="skills-list">
-            <div className="skill" style={{ backgroundColor: '#E34F26' }}>HTML</div>
+            <div className="skill" style={{ backgroundColor: '#8cb9df' }}>HTML</div>
             <div className="skill" style={{ backgroundColor: '#1572B6' }}>CSS</div>
-            <div className="skill" style={{ backgroundColor: '#61DAFB' }}>React</div>
-            <div className="skill" style={{ backgroundColor: '#F0DB4F' }}>JavaScript</div>
-            <div className="skill" style={{ backgroundColor: '#3776AB' }}>Python</div>
-            <div className="skill" style={{ backgroundColor: '#007396' }}>Java</div>
-            <div className="skill" style={{ backgroundColor: '#00599C' }}>C++</div>
+            <div className="skill" style={{ backgroundColor: '#8cb9df' }}>React</div>
+            <div className="skill" style={{ backgroundColor: '#1572B6' }}>JavaScript</div>
+            <div className="skill" style={{ backgroundColor: '#8cb9df' }}>Python</div>
+            <div className="skill" style={{ backgroundColor: '#1572B6' }}>Java</div>
+            <div className="skill" style={{ backgroundColor: '#8cb9df' }}>C++</div>
           </div>
         </div>
       </div>

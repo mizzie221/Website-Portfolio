@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 .about-section {
   display: flex;
   justify-content: center;
@@ -7,6 +9,7 @@
   position: relative; /* Added to position the .about-links absolutely within this section */
 
   .about-links {
+    font-family: 'Montserrat';
     position: absolute;
     top: 0;
     left: 0;
@@ -15,10 +18,11 @@
     justify-content: center;
     gap: 20px;
     padding: 10px 0;
-    background-color: #4B8BBE; 
+    background-color: #8cb9df; 
     z-index: 1;
 
     a {
+      font-family: 'Montserrat', sans-serif;
       text-decoration: none;
       font-size: 1.2rem;
       color: #fff; /* Changed to white for better contrast against the background */
@@ -38,6 +42,7 @@
   }
 
   .about-me {
+    font-family: 'Montserrat', sans-serif;
     flex: 1;
     padding: 40px;
     display: flex;
@@ -68,7 +73,7 @@
 
   .separator-line {
     width: 2px;
-    background-color: #4B8BBE;
+    background-color: #8cb9df;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -77,6 +82,7 @@
   }
 
   .skills-container {
+    font-family: 'Montserrat', sans-serif;
     flex: 1;
     padding: 0px 40px;
     display: flex;
@@ -100,11 +106,18 @@
       .skill {
         padding: 5px 10px;
         border-radius: 30px;
-        font-size: 1rem;
+        font-size: 1.4rem;
         color: #fff;
         text-align: center;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        transition: transform 0.2s ease, box-shadow 0.2s ease; 
+      
+
+      &:hover {
+        transform: scale(1.05); /* Slightly increase the size */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
+    }
     }
   }
 }

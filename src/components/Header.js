@@ -1,6 +1,10 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { ReactTyped as Typed } from "react-typed";
 import './Header.scss';
+import aboutIcon from './images/About.jpg';
+import projectsIcon from './images/Projects.jpg'
+import resumeIcon from './images/Resume.jpg'
+import contactIcon from './images/Contact.jpg'
 
 
 const Header = () => {
@@ -29,7 +33,7 @@ const Header = () => {
   };
 
   return (
-    <header className="header">
+    <header className="header" id="header">
       <div className="centered-content">
         <h1>Hi, I'm Minh</h1>
         <div className="typing-container">
@@ -59,11 +63,22 @@ const Header = () => {
             />
             {showContent && (
               <div className="navigation-links">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#resume">Resume</a>
-                <a href="#contact">Contact</a>
+                <a href="#about">
+                  <img src={aboutIcon} alt="About" className="nav-icon" />
+                  <span>About</span>
+                </a>
+                <a href="#projects">
+                  <img src={projectsIcon} alt="Projects" className="nav-icon" />
+                  <span>Projects</span>
+                </a>
+                <a href="#resume">
+                  <img src={resumeIcon} alt='Resume' className='nav-icon' />
+                  <span>Resume</span>
+                </a>
+                <a href="#contact">
+                  <img src={contactIcon} alt="Contact" className="nav-icon" />
+                  <span>Contact</span>
+                </a>
               </div>
             )}
           </div>

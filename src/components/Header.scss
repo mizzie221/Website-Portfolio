@@ -33,7 +33,7 @@
     z-index: 2;
     background-color: rgba(173, 216, 230, 0.1);
     width: 94%; /* Make the box cover 80% of the page width */
-    height: 87%; /* Make the box cover 80% of the page height */
+    height: 91%; /* Make the box cover 80% of the page height */
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -216,12 +216,11 @@
 
   .navigation-links{
     position: absolute; 
-    top: 100px; 
-    left: 9.6%;
+    top: 70px; 
+    left: 12%;
     transform: translateX(-50%); 
     display: flex;
     flex-direction: column; 
-    gap: 60px;
 
     a {
       color: white;
@@ -240,9 +239,26 @@
   top: 70%; 
   left: 69%;
   width: 400px; 
-  height: 160px; 
+  height: 155px; 
   transform: translate(-50%, -50%);
   z-index: 1; 
+}
+
+.nav-icon {
+  width: 90px; 
+  height: 90px;
+  margin: 10px; 
+  border-radius: 90px;
+  transition: transform 0.2s ease; 
+
+  &:hover {
+    transform: scale(1.1); 
+  }
+
+  span {
+    font-size: 1rem;
+    font-weight: normal;
+  }
 }
 
 }  
