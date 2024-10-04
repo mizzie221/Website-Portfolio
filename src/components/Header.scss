@@ -65,7 +65,7 @@
 
   .typing-container {
     font-size: 1.5rem;
-    color: #4B8BBE;
+    color: #BCD8E2;
     position: relative;
     left: 330px; /* Align the typing container with the H1 */
     top: 230px; /* Align the typing container with the H1 */
@@ -78,7 +78,7 @@
     padding: 12px; /* Space inside the box */
     border: 1px solid #ccc; /* Border for the box */
     border-radius: 15px; /* Rounded corners for the box */
-    background-color: #4B8BBE; /* Light background color inside the box */
+    background-color: #BCD8E2; /* Light background color inside the box */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Shadow for depth */
     display: inline-block; /* Inline-block to fit the box snugly around the keyboard */
     position: absolute;
@@ -205,7 +205,7 @@
       align-items: center;
       justify-content: center;
       text-align: left;
-      color: white;
+      color: #BCD8E2;
     
     .screen-content {
       align-items: flex-start;
@@ -213,7 +213,7 @@
     }
       
     .screen-text {
-        color: white; 
+        color: #BCD8E2; 
     }
     }
   }
@@ -225,16 +225,6 @@
     transform: translateX(-50%); 
     display: flex;
     flex-direction: column; 
-
-    .vertical-line {
-      width: 2px;
-      height: 540px; 
-      background-color: #ffffff; 
-      position: absolute;
-      left: 500%; 
-      top: -15%;
-      z-index: 2; 
-    }
 
     a {
       color: white;

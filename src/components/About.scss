@@ -6,7 +6,7 @@
   align-items: center;
   min-height: 100vh;
   background-color: #fff;
-  position: relative; /* Added to position the .about-links absolutely within this section */
+  position: relative;
 
   .about-links {
     font-family: 'Montserrat';
@@ -18,14 +18,14 @@
     justify-content: center;
     gap: 20px;
     padding: 10px 0;
-    background-color: #8cb9df; 
+    background-color: #8cb9df;
     z-index: 1;
 
     a {
       font-family: 'Montserrat', sans-serif;
       text-decoration: none;
       font-size: 1.2rem;
-      color: #fff; /* Changed to white for better contrast against the background */
+      color: #fff;
       font-weight: bold;
 
       &:hover {
@@ -39,85 +39,94 @@
     width: 100%;
     height: 100vh;
     position: relative;
-  }
 
-  .about-me {
-    font-family: 'Montserrat', sans-serif;
-    flex: 1;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    .profile-image {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    p {
-      font-size: 1.2rem;
-      color: #555;
-      line-height: 1.6;
+    .centered-content {
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+      z-index: 2;
+      background-color: rgba(173, 216, 230, 0.1);
+      width: 869px;
+      height: 87%;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       text-align: center;
-    }
-  }
-
-  .separator-line {
-    width: 2px;
-    background-color: #8cb9df;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .skills-container {
-    font-family: 'Montserrat', sans-serif;
-    flex: 1;
-    padding: 0px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    h3 {
-      font-size: 2rem;
-      margin-top: 60px;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    .skills-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      width: 100%;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-top: 66px;
+      margin-left: 20px;
+    }
 
-      .skill {
-        padding: 5px 10px;
-        border-radius: 30px;
-        font-size: 1.4rem;
-        color: #fff;
+    .separator-line {
+      width: 2px;
+      background-color: #BCD8E2;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .about-me {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: #555;
+        line-height: 1.6;
         text-align: center;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-        transition: transform 0.2s ease, box-shadow 0.2s ease; 
-      
-
-      &:hover {
-        transform: scale(1.05); /* Slightly increase the size */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
     }
+
+    .skills-container {
+      flex: 1;
+      padding: 0px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+
+      h3 {
+        font-size: 2rem;
+        margin-top: 60px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .skills-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+
+        .skill {
+          padding: 5px 10px;
+          border-radius: 30px;
+          font-size: 1.2rem;
+          color: #fff;
+          text-align: center;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+          &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
     }
   }
 }

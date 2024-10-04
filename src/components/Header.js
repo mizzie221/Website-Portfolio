@@ -63,7 +63,6 @@ const Header = () => {
             />
             {showContent && (
               <div className="navigation-links">
-                <div className="vertical-line"></div> {/* Add this line */}
                 <a href="#about">
                   <img src={aboutIcon} alt="About" className="nav-icon" />
                 </a>
